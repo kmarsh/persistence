@@ -5,7 +5,7 @@ require "open3"
 include Open3
   
 get '/' do
-  "Hello from Sinatra on Heroku!"
+  "Persistence, latest build stats would go here"
 end
 
 post '/build' do
