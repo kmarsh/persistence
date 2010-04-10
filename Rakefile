@@ -3,5 +3,5 @@ task :get do
 end
 
 task :default => [:get] do
-  system("echo 'Building...' && cd tmp/csnip && touch config/database.yml && rake")
+  system("echo 'Building...' && cd tmp/csnip && touch config/database.yml && rake --trace")
 end
