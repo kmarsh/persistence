@@ -3,5 +3,5 @@ task :get do
 end
 
 task :default => [:get] do
-  system("cd tmp/csnip && rake")
+  system("echo 'Building...' && cd tmp/csnip && rake")
 end
