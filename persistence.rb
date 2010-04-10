@@ -16,6 +16,6 @@ class PersistanceBuilder
   def self.build
     stdin, stdout, stderr = popen3('rake')
     
-    return "stdout:\n\n#{stdout}\n\nstderr:\n\n#{stdout}"
+    return "stdout:\n\n#{stdout.read}\n\nstderr:\n\n#{stdout.read}"
   end
 end
