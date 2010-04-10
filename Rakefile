@@ -3,5 +3,17 @@ task :get do
 end
 
 task :default => [:get] do
-  system("echo 'Building...' && cd tmp/csnip && touch config/database.yml && rake --trace")
+  
+database_yml = <<EOF
+test:
+  adapter: sqlite3
+  database: tmp/test.sqlite3
+  timeout: 5000
+EOF
+
+  File.open("tmp/csnip/config/database.yml", "w") do |f|
+    f.puts database_yml
+  end
+
+  system("echo 'Building...' && cd tmp/csnip && rake --trace")
 end
