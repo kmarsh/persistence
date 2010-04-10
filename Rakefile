@@ -15,5 +15,5 @@ EOF
     f.puts database_yml
   end
 
-  system("echo 'Building...' && cd tmp/csnip && rake --trace")
+  system("echo 'Building...' && cd tmp/csnip && RAILS_ENV='test' rake --trace")
 end
