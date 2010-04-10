@@ -1,0 +1,4 @@
+# Any application-specific gems your app's tests requires would go here:
+
+aasm  
+rspec-rails
