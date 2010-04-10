@@ -12,6 +12,10 @@ post '/build' do
   PersistanceBuilder.build
 end
 
+get '/environment' do
+  `which git`
+end
+
 class PersistanceBuilder
   def self.build
     stdin, stdout, stderr = popen3('rake')
