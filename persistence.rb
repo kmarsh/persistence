@@ -1,11 +1,11 @@
 require 'rubygems'
 require 'sinatra'
-require "open3"
+require 'open3'
 
 include Open3
   
 get '/' do
-  "Persistence, latest build stats would go here"
+  'Persistence, latest build stats would go here'
 end
 
 post '/build' do
