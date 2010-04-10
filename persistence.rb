@@ -23,3 +23,8 @@ class PersistanceBuilder
     return "stdout:\n#{stdout.read}\n\nstderr:\n#{stderr.read}"
   end
 end
+# 
+# Persistence.config do |p|
+#   p.git_repo = ''
+#   p.before_build = lambda { system("") }
+# end
