@@ -9,14 +9,14 @@ get '/' do
 end
 
 post '/build' do
-  PersistanceBuilder.build
+  PersistenceBuilder.build
 end
 
-get '/environment' do
-  `which git`
-end
+# get '/environment' do
+#   `which git`
+# end
 
-class PersistanceBuilder
+class PersistenceBuilder
   def self.build
     stdin, stdout, stderr = popen3('rake')
     
