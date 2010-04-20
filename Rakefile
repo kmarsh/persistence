@@ -19,28 +19,27 @@ end
 
 task(:default => :spec)
 
-# namespace :build do
+# http://stackoverflow.com/questions/577944/how-to-run-rake-tasks-from-within-rake-tasks
+namespace :build do
+  desc "Runs the build"
+  task :run do
+    # Rake::Task["build:checkout"].invoke
+    # system("cd tmp/persistence")
+    #   system("export RAILS_ENV='test'")
+    #   Rake::Task["build:database"].invoke
+    #   Rake::Task["rake gems:install"].invoke
+    #   Rake::Task["rake"].invoke
+  end
+end
   
-#   desc "Runs the build"
-#   task :run do
-#     # http://stackoverflow.com/questions/577944/how-to-run-rake-tasks-from-within-rake-tasks
-#     # Rake::Task["build:checkout"].invoke
-#     # system("cd tmp/persistence")
-#     #   system("export RAILS_ENV='test'")
-#     #   Rake::Task["build:database"].invoke
-#     #   Rake::Task["rake gems:install"].invoke
-#     #   Rake::Task["rake"].invoke
-#     # end
-#   end
-  
-#   desc "Checks out the most recent commit"
-#   task :checkout do
-#     unless File.directory?('tmp/persistence')
-#       system("echo 'Cloning git repo...' && git clone git://github.com/willcodeforfoo/persistence.git tmp/persistence")
-#     else
-#       system("echo 'Updating git repo...' && git pull --rebase")
-#     end
-#   end
+  desc "Checks out the most recent commit"
+  task :checkout do
+    unless File.directory?('tmp/persistence')
+      system("echo 'Cloning git repo...' && git clone git://github.com/willcodeforfoo/persistence.git tmp/persistence")
+    else
+      system("echo 'Updating git repo...' && git pull --rebase")
+    end
+  end
 
 #   desc "Configures the database for the build"
 #   task :database do
